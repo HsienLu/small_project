@@ -1,9 +1,21 @@
 <?php
 require_once("../db_connect_small_project.php");
-$sql = "SELECT * FROM user_profile ";
+
+
+//分頁功能
+$page = $_GET["page"] ?? 1;
+$startItem = ($page - 1) * 10;
+
+//查詢資料庫
+$sql = "SELECT * FROM user_profile LIMIT $startItem,10";
 $result = $conn->query($sql);
 $rows = $result->fetch_all(MYSQLI_ASSOC);
 
+//計算總頁數
+$sqlPages = "SELECT * FROM user_profile";
+$resultTotalPages = $conn->query($sqlPages);
+$totalPages = $resultTotalPages->num_rows;
+$pages = ceil($totalPages / 10) //計算總共有幾頁
 ?>
 
 <!DOCTYPE html>
@@ -71,7 +83,7 @@ $rows = $result->fetch_all(MYSQLI_ASSOC);
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid px-4">
-                    <h1 class="mt-4">Dashboard</h1>
+                    <h1 class="mt-4">Dashboard <?= $totalPages; ?></h1>
                     <ol class="breadcrumb mb-4">
                         <li class="breadcrumb-item active">Dashboard</li>
                     </ol>
@@ -121,6 +133,16 @@ $rows = $result->fetch_all(MYSQLI_ASSOC);
                             </table>
                         </div>
                     </div>
+
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <li class="page-item"><a class="page-link" href="dashboard.php?page=<?= $page - 1 ?>">Previous</a></li>
+                            <?php for ($i = 1; $i <= $pages; $i++) : ?>
+                                <li class="page-item"><a class="page-link" href="dashboard.php?page=<?= $i ?>"><?= $i ?></a></li>
+                            <?php endfor ?>
+                            <li class="page-item"><a class="page-link" href="dashboard.php?page=<?= $page + 1 ?>">Next</a></li>
+                        </ul>
+                    </nav>
 
                     <div class="opration py-3">
                         <h3>管理者操作面板</h3>
