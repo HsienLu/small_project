@@ -101,22 +101,22 @@ $pages = ceil($totalPages / 10) //計算總共有幾頁
                                     <tr>
                                         <th>Id</th>
                                         <th>Account</th>
-                                        <th>Email</th>
                                         <th>Password</th>
-
+                                        <th>Email</th>
+                                        <th>operation</th>
                                     </tr>
                                 </thead>
 
                                 <tbody>
                                     <?php foreach ($rows as $users) :; ?>
                                         <tr>
-
                                             <td><?= $users["id"]  ?></td>
                                             <td><?= $users["account"]  ?></td>
-                                            <td><?= $users["email"]  ?></td>
                                             <td><?= $users["password"]  ?></td>
-
-
+                                            <td><?= $users["email"]  ?></td>
+                                            <td>
+                                                <a href="doRead.php?id=<?= $users["id"] ?>" class="btn btn-dark">Read</a>
+                                            </td>
                                         </tr>
                                     <?php endforeach; ?>
                                 </tbody>
@@ -124,6 +124,7 @@ $pages = ceil($totalPages / 10) //計算總共有幾頁
                             </table>
                         </div>
                     </div>
+
 
                     <nav aria-label="Page navigation example">
                         <ul class="pagination">
@@ -137,9 +138,9 @@ $pages = ceil($totalPages / 10) //計算總共有幾頁
 
                     <div class="operation py-3">
                         <h3>管理者操作面板</h3>
-                        <div class="opreation-content">
+                        <div class="operation-content">
                             <a href="/small_project/register.php"><button class="btn btn-primary">新增</button></a>
-                            <button class="btn btn-primary">讀取</button>
+
                             <button class="btn btn-primary">修改</button>
                             <button class="btn btn-primary">刪除</button>
                         </div>
