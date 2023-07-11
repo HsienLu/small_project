@@ -42,14 +42,20 @@
                                         <div class="row mb-3">
                                             <div class="col-md-6">
                                                 <div class="form-floating mb-3 mb-md-0">
-                                                    <input class="form-control" id="inputBirthday" name="birthday" type="text" placeholder="1997-09-23" />
-                                                    <label for="inputBirthday">Birthday</label>
+                                                    <input class="form-control" id="inputPhone" name="phone" type="text" placeholder="0912354568" />
+                                                    <label for="inputPhone">phone</label>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6 ">
-                                                <div class="">
-                                                    <label for="gender">性別：</label>
-                                                    <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="gender" name="gender">
+                                            <div class="col-md-6">
+                                                <div class="form-floating mb-3 mb-md-0">
+                                                    <input class="form-control" id="inputBirthday" name="birthday" type="text" placeholder="1993-05-23" />
+                                                    <label for="inputBirthday">birthday</label>
+                                                </div>
+                                            </div>
+                                            <div class=" pt-3">
+                                                <div class="d-flex justify-content-between">
+                                                    <label for="gender" class="w-25 ">性別：</label>
+                                                    <select class="form-select form-select-sm w-75" aria-label=".form-select-sm example" id="gender" name="gender">
                                                         <option value="0">男</option>
                                                         <option value="1">女</option>
                                                     </select>
@@ -61,7 +67,7 @@
                                             <label for="inputEmail">Email</label>
                                         </div>
                                         <div class="form-floating mb-3">
-                                            <input class="form-control" id="address" name="address" type="address" placeholder="address" />
+                                            <input class="form-control" id="address" name="address" type="text" placeholder="address" />
                                             <label for="address">Address</label>
                                         </div>
                                         <div class="form-floating mb-3">
@@ -88,7 +94,7 @@
                                     </form>
                                 </div>
                                 <div class="card-footer text-center py-3">
-                                    <div class="small"><a href="index.php">Have an account? Go to login</a></div>
+                                    <div class="small"><a href="dashboard.php">Go to dashboard</a></div>
                                 </div>
                             </div>
                         </div>

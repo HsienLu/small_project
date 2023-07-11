@@ -103,6 +103,7 @@ $pages = ceil($totalPages / 10) //計算總共有幾頁
                                         <th>Account</th>
                                         <th>Email</th>
                                         <th>Password</th>
+
                                     </tr>
                                 </thead>
 
@@ -114,6 +115,7 @@ $pages = ceil($totalPages / 10) //計算總共有幾頁
                                             <td><?= $users["account"]  ?></td>
                                             <td><?= $users["email"]  ?></td>
                                             <td><?= $users["password"]  ?></td>
+
 
                                         </tr>
                                     <?php endforeach; ?>

@@ -1,15 +1,35 @@
 <?php
-echo $_POST["firstName"] . "<br>";
-
-echo $_POST["lastName"] . "<br>";
-echo $_POST["birthday"] . "<br>";
-echo $_POST["gender"] . "<br>";
-echo $_POST["email"] . "<br>";
-echo $_POST["account"] . "<br>";
-echo $_POST["password"] . "<br>";
-echo $_POST["confirmPassword"];
-
-$sql = "INSERT INTO users (name, phone, email, created_at, valid) VALUES ('$name', '$phone', '$email', '$now',1)";
+// echo $_POST["firstName"] . "<br>";
+// echo $_POST["lastName"] . "<br>";
+// echo $_POST["birthday"] . "<br>";
+// echo $_POST["phone"] . "<br>";
+// echo $_POST["gender"] . "<br>";
+// echo $_POST["address"] . "<br>";
+// echo $_POST["email"] . "<br>";
+// echo $_POST["account"] . "<br>";
+// echo $_POST["password"] . "<br>";
+// echo $_POST["confirmPassword"];
+require_once("../db_connect_small_project.php");
+//users 資料庫新增
+$account = $_POST["account"];
+$email = $_POST["email"];
+$password = $_POST["password"];
+$now = date('Y-m-d H:i:s');
+$sqlUsers = "INSERT INTO users (account, email, password, created_at, updated_at,vip ,valid) VALUES ('$account', '$email', '$password', '$now','$now' ,0,1)";
+$conn->query($sqlUsers);
+// $conn->close();
+//users_Profile 資料庫新增
+$lastName = $_POST["lastName"];
+$firstName = $_POST["firstName"];
+$gender = $_POST["gender"];
+$birthday = $_POST["birthday"];
+$phone = $_POST["phone"];
+$address = $_POST["address"];
+$sqlUsersProfile = "INSERT INTO `user_profile` (`last_name`, `first_name`, `gender`, `birthday`, `phone`, `address`) VALUES ('$lastName ', '$firstName', '$gender', '$birthday ','$phone' ,'$address')";
+$conn->query($sqlUsersProfile);
+//處理外鍵
+$conn->query("UPDATE user_profile SET  user_id= id");
+$conn->close();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,7 +52,7 @@ $sql = "INSERT INTO users (name, phone, email, created_at, valid) VALUES ('$name
     </style>
 </head>
 
-<body class=" bg-keyboard">
+<body class=" bg-primary">
     <div id="layoutAuthentication">
         <div id="layoutAuthentication_content">
             <main>
@@ -78,7 +98,7 @@ $sql = "INSERT INTO users (name, phone, email, created_at, valid) VALUES ('$name
                                     </div>
                                 </div>
                                 <div class="card-footer text-center py-3">
-                                    <div class="small"><a href="register.html">Need an account? Sign up!</a></div>
+                                    <div class="small"><a href="dashboard.php">Go to dashboard</a></div>
                                 </div>
                             </div>
                         </div>
