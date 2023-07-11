@@ -7,7 +7,7 @@ $page = $_GET["page"] ?? 1;
 $startItem = ($page - 1) * 10;
 
 //查詢資料庫
-$sql = "SELECT * FROM user_profile LIMIT $startItem,10";
+$sql = "SELECT * FROM users LIMIT $startItem,10";
 $result = $conn->query($sql);
 $rows = $result->fetch_all(MYSQLI_ASSOC);
 
@@ -83,9 +83,9 @@ $pages = ceil($totalPages / 10) //計算總共有幾頁
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid px-4">
-                    <h1 class="mt-4">Dashboard <?= $totalPages; ?></h1>
+                    <h1 class="mt-4">Dashboard </h1>
                     <ol class="breadcrumb mb-4">
-                        <li class="breadcrumb-item active">Dashboard</li>
+                        <li class="breadcrumb-item active">共計:<?= $totalPages; ?> 筆</li>
                     </ol>
 
                     <div class="card mb-4">
@@ -99,33 +99,22 @@ $pages = ceil($totalPages / 10) //計算總共有幾頁
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th>編號</th>
-                                        <th>姓</th>
-                                        <th>名</th>
-                                        <th>性別</th>
-                                        <th>生日</th>
-                                        <th>電話</th>
-                                        <th>地址</th>
+                                        <th>Id</th>
+                                        <th>Account</th>
+                                        <th>Email</th>
+                                        <th>Password</th>
                                     </tr>
                                 </thead>
 
                                 <tbody>
-                                    <?php foreach ($rows as $user_profile) :; ?>
+                                    <?php foreach ($rows as $users) :; ?>
                                         <tr>
 
-                                            <td><?= $user_profile["id"]  ?></td>
-                                            <td><?= $user_profile["last_name"]  ?></td>
-                                            <td><?= $user_profile["first_name"]  ?></td>
-                                            <td>
-                                                <?php
-                                                $genders = $user_profile["gender"] == 1 ? "女" : "男";
-                                                echo $genders;
-                                                ?>
+                                            <td><?= $users["id"]  ?></td>
+                                            <td><?= $users["account"]  ?></td>
+                                            <td><?= $users["email"]  ?></td>
+                                            <td><?= $users["password"]  ?></td>
 
-                                            </td>
-                                            <td><?= $user_profile["birthday"]  ?></td>
-                                            <td><?= $user_profile["phone"]  ?></td>
-                                            <td><?= $user_profile["address"]  ?></td>
                                         </tr>
                                     <?php endforeach; ?>
                                 </tbody>
@@ -144,7 +133,7 @@ $pages = ceil($totalPages / 10) //計算總共有幾頁
                         </ul>
                     </nav>
 
-                    <div class="opration py-3">
+                    <div class="operation py-3">
                         <h3>管理者操作面板</h3>
                         <div class="opreation-content">
                             <a href="/small_project/register.php"><button class="btn btn-primary">新增</button></a>
