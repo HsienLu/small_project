@@ -10,12 +10,18 @@ $resultUser = $conn->query($sqlUser);
 $rowsUser = $resultUser->fetch_all(MYSQLI_ASSOC);
 
 //讀取id
+$id = $_GET["id"];
 $idA = $_GET["id"] - 1;
 
 
 //文章收藏功能
-// "SELECT article.title FROM user_profile"
-
+$title = $conn->query(
+    "SELECT article_like.*,article.title FROM article_like
+JOIN article ON article.id = article_like.article_id;
+WHERE user_id='$id'"
+);
+$titles = $title->fetch_all(MYSQLI_ASSOC);
+var_dump($titles);
 
 ?>
 <!doctype html>
