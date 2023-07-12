@@ -17,11 +17,11 @@ $idA = $_GET["id"] - 1;
 //文章收藏功能
 $title = $conn->query(
     "SELECT article_like.*,article.title FROM article_like
-JOIN article ON article.id = article_like.article_id;
-WHERE user_id='$id'"
+JOIN article ON article.id = article_like.article_id
+WHERE article_like.user_id = $id"
 );
 $titles = $title->fetch_all(MYSQLI_ASSOC);
-var_dump($titles);
+// var_dump($titles);
 
 ?>
 <!doctype html>
@@ -60,6 +60,13 @@ var_dump($titles);
         <div class="user_profile_box m-auto pt-5">
             <h2>喜愛文章</h2>
             <div class="border p-3 border-primary border-3 rounded">
+                <h4>
+                    <?php
+                    foreach ($title as $articleTitle) {
+                        echo '<a href="#" class="text-secondary"><li>' . $articleTitle["title"] . '</a><br>';
+                    }
+                    ?>
+                </h4>
             </div>
         </div>
 
