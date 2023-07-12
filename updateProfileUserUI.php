@@ -40,7 +40,7 @@ $idA = $_GET["id"] - 1;
                                 </div>
 
                                 <div class="card-body">
-                                    <form action="doUpdate.php?id=<?= $id ?>" method="post">
+                                    <form action="doUpdateProfileUserUI.php?id=<?= $id ?>" method="post">
                                         <div class="row mb-3">
                                             <div class="col-md-12">
                                                 <h4 class="py-3">Last name</h4>
@@ -77,14 +77,14 @@ $idA = $_GET["id"] - 1;
                                         <div class="col-md-12">
                                             <h4 class="py-3">Phone</h4>
                                             <div class="form-floating">
-                                                <input class="form-control" id="inputPhone" name="Phone" type="text" placeholder="Enter your last name" />
+                                                <input class="form-control" id="inputPhone" name="phone" type="text" placeholder="Enter your last name" />
                                                 <label class="text-secondary" for="inputPhone"><?= $rowsUserProfile[$idA]["phone"] ?></label>
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <h4 class="py-3">Address</h4>
                                             <div class="form-floating">
-                                                <input class="form-control" id="inputAddress" name="Address" type="text" placeholder="Enter your last name" />
+                                                <input class="form-control" id="inputAddress" name="address" type="text" placeholder="Enter your last name" />
                                                 <label class="text-secondary" for="inputAddress"><?= $rowsUserProfile[$idA]["address"] ?></label>
                                             </div>
                                         </div>
