@@ -68,8 +68,9 @@ $titles = $title->fetch_all(MYSQLI_ASSOC);
                     ?>
                 </h4>
             </div>
-        </div>
 
+        </div>
+        <a href="updateProfileUserUI.php?id=<?= $id ?>" class="btn btn-primary my-5 w-25 mx-auto">編輯</a>
 
     </div>
 

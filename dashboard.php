@@ -5,6 +5,7 @@ require_once("../db_connect_small_project.php");
 //分頁功能
 $page = $_GET["page"] ?? 1;
 $startItem = ($page - 1) * 10;
+//修改功能連結
 
 //查詢資料庫
 $sql = "SELECT * FROM users LIMIT $startItem,10";
@@ -116,6 +117,7 @@ $pages = ceil($totalPages / 10) //計算總共有幾頁
                                             <td><?= $users["email"]  ?></td>
                                             <td>
                                                 <a href="doRead.php?id=<?= $users["id"] ?>" class="btn btn-dark">Read</a>
+                                                <a href="updateUserUI.php?id=<?= $users["id"] ?>" class="btn btn-dark">Update</a>
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>
