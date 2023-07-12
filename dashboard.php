@@ -37,18 +37,18 @@ $pages = ceil($totalPages / 10) //計算總共有幾頁
 <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
         <!-- Navbar Brand-->
-        <a class="navbar-brand ps-3" href="index.html">Start Bootstrap</a>
+        <a class="navbar-brand ps-3" href="index.html"> <img class="w-75" src="/small_project/images/Keyboard-Traveler/橫logo白.svg" alt=""></a>
         <!-- Sidebar Toggle-->
         <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
         <!-- Navbar Search-->
-        <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+        <!-- <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
             <div class="input-group">
                 <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
                 <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
             </div>
-        </form>
+        </form> -->
         <!-- Navbar-->
-        <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+        <!-- <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -60,17 +60,20 @@ $pages = ceil($totalPages / 10) //計算總共有幾頁
                     <li><a class="dropdown-item" href="#!">Logout</a></li>
                 </ul>
             </li>
-        </ul>
+        </ul> -->
+        <div class="text-end w-100 pe-3">
+            <img style="width:100px;" src="/small_project/images/Keyboard-Traveler/橫字白.svg" alt="">
+        </div>
     </nav>
     <div id="layoutSidenav">
         <div id="layoutSidenav_nav">
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                 <div class="sb-sidenav-menu">
                     <div class="nav">
-                        <div class="sb-sidenav-menu-heading">Core</div>
-                        <a class="nav-link" href="index.php">
+                        <!-- <div class="sb-sidenav-menu-heading"></div> -->
+                        <a class="nav-link" href="dashboard.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                            Dashboard
+                            會員中心
                         </a>
 
                     </div>
@@ -84,7 +87,7 @@ $pages = ceil($totalPages / 10) //計算總共有幾頁
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid px-4">
-                    <h1 class="mt-4">Dashboard </h1>
+                    <h1 class="mt-4">會員中心 </h1>
                     <ol class="breadcrumb mb-4">
                         <li class="breadcrumb-item active">共計:<?= $totalPages; ?> 筆</li>
                     </ol>
@@ -92,7 +95,7 @@ $pages = ceil($totalPages / 10) //計算總共有幾頁
                     <div class="card mb-4">
                         <div class="card-header">
                             <i class="fas fa-table me-1"></i>
-                            DataTable Example
+                            會員資料列表
                         </div>
                         <div class="card-body">
                             <!------------------------------------------------  輸入表格--------------------------------------------------------------->
@@ -142,8 +145,6 @@ $pages = ceil($totalPages / 10) //計算總共有幾頁
                         <h3>管理者操作面板</h3>
                         <div class="operation-content">
                             <a href="/small_project/register.php"><button class="btn btn-primary">新增</button></a>
-
-                            <button class="btn btn-primary">修改</button>
                             <button class="btn btn-primary">刪除</button>
                         </div>
 
@@ -155,7 +156,7 @@ $pages = ceil($totalPages / 10) //計算總共有幾頁
             <footer class="py-4 bg-light mt-auto">
                 <div class="container-fluid px-4">
                     <div class="d-flex align-items-center justify-content-between small">
-                        <div class="text-muted">Copyright &copy; Your Website 2023</div>
+                        <div class="text-muted">Copyright &copy; Key Traveler Website 2023</div>
                         <div>
                             <a href="#">Privacy Policy</a>
                             &middot;

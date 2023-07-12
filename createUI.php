@@ -65,7 +65,7 @@ $conn->close();
                                 </div>
                                 <div class="card-body">
                                     <div class="small mb-3 text-muted">
-                                        <h5>新增資料如下</h5>
+                                        <h5>新增資料如下:</h5>
                                     </div>
                                     <div class="py-2 container">
                                         <table class="table table-bordered table-striped border-5 ">
