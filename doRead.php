@@ -42,24 +42,57 @@ $titles = $title->fetch_all(MYSQLI_ASSOC);
 
     <div class="container d-flex justify-content-center flex-column">
 
-        <div class="user_profile_box m-auto pt-5">
+        <div class="user_profile_box m-auto pt-5 w-100">
             <h1>資料如下:</h1>
-            <div class="border p-3 border-primary border-3 rounded">
-                <h3>Account:<?= $rowsUser[$idA]['account'] ?></h3>
-                <h3>Password:<?= $rowsUser[$idA]['password'] ?></h3>
-                <h3>Email:<?= $rowsUser[$idA]['email'] ?></h3>
-                <h3>Last Name:<?= $rows[$idA]['last_name'] ?></h3>
-                <h3>First Name:<?= $rows[$idA]['first_name'] ?></h3>
-                <h3>gender:<?= $rows[$idA]['gender'] == 1 ? "女" : "男" ?></h3>
-                <h3>birthday:<?= $rows[$idA]['birthday'] ?></h3>
-                <h3>phone:<?= $rows[$idA]['phone'] ?></h3>
-                <h3>address:<?= $rows[$idA]['address'] ?></h3>
-                <h3>Created Time:<?= $rowsUser[$idA]['created_at'] ?></h3>
+            <div class="">
+                <table class="table table-bordered  table-striped border-5  border-secondary rounded">
+                    <tr class="row">
+                        <td class="col">Account</td>
+                        <td class="col"><?= $rowsUser[$idA]['account'] ?></td>
+                    </tr>
+                    <tr class="row">
+                        <td class="col">Password</td>
+                        <td class="col"><?= $rowsUser[$idA]['password'] ?></td>
+                    </tr>
+                    <tr class="row">
+                        <td class="col">Email</td>
+                        <td class="col"><?= $rowsUser[$idA]['email'] ?></td>
+                    </tr>
+                    <tr class="row">
+                        <td class="col">Last Name</td>
+                        <td class="col"><?= $rows[$idA]['last_name'] ?></td>
+                    </tr>
+                    <tr class="row">
+                        <td class="col">First Name</td>
+                        <td class="col"><?= $rows[$idA]['first_name'] ?></td>
+                    </tr>
+                    <tr class="row">
+                        <td class="col">gender</td>
+                        <td class="col"><?= $rows[$idA]['gender'] == 1 ? "女" : "男" ?></td>
+                    </tr>
+                    <tr class="row">
+                        <td class="col">birthday</td>
+                        <td class="col"><?= $rows[$idA]['birthday'] ?></td>
+                    </tr>
+                    <tr class="row">
+                        <td class="col">phone</td>
+                        <td class="col"><?= $rows[$idA]['phone'] ?></td>
+                    </tr>
+                    <tr class="row">
+                        <td class="col">address</td>
+                        <td class="col"><?= $rows[$idA]['address'] ?></td>
+                    </tr>
+                    <tr class="row">
+                        <td class="col">Created Time</td>
+                        <td class="col"><?= $rowsUser[$idA]['created_at'] ?></td>
+                    </tr>
+                </table>
             </div>
+
         </div>
-        <div class="user_profile_box m-auto pt-5">
+        <div class="user_profile_box m-auto pt-5 w-100">
             <h2>喜愛文章</h2>
-            <div class="border p-3 border-primary border-3 rounded">
+            <div class="border p-3 border-secondary border-3 rounded">
                 <h4>
                     <?php
                     foreach ($title as $articleTitle) {
