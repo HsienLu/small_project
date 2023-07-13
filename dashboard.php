@@ -121,6 +121,7 @@ $pages = ceil($totalPages / 10) //計算總共有幾頁
                                             <td>
                                                 <a href="doRead.php?id=<?= $users["id"] ?>" class="btn btn-dark">Read</a>
                                                 <a href="updateUserUI.php?id=<?= $users["id"] ?>" class="btn btn-dark">Update</a>
+                                                <a href="doStop.php?id=<?= $users["id"] ?>" class="btn btn-dark">停權</a>
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>
