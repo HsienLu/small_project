@@ -117,6 +117,7 @@ $pages = ceil($totalPages / 10) //計算總共有幾頁
                                             <td><?= $usersStop["password"]  ?></td>
                                             <td><?= $usersStop["email"]  ?></td>
                                             <td>
+                                                <a href="doRecover.php?id=<?= $usersStop["id"] ?>" class="btn btn-dark">Recover</a>
                                                 <a href="doDelete.php?id=<?= $usersStop["id"] ?>" class="btn btn-dark">刪除會員資料</a>
                                             </td>
                                         </tr>
